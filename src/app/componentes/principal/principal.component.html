@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #D9f1db;">
+    <div class="container-fluid">
+        <a class="navbar-brand"><strong>HydroGrow</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <b><a class="nav-link" style="color:#131213;" routerLink="principal"><i
+                                class="fa-solid fa-house"></i>&nbsp;&nbsp;Home </a> </b>
+                </li>
+                <li class="nav-item">
+                    <b><a class="nav-link" style="color:#232324;" routerLink="principal" enable="false"><i
+                                class="fa-solid fa-tooth"></i>&nbsp;&nbsp;Configuraciones</a></b>
+                </li>
+            </ul>
+        </div>
+        <form class="nav-item">
+            <div class="flex-shrink-0 dropdown dropstart">
+                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <strong>Usuario&nbsp;</strong>
+                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu text-small shadow">
+                    <li><a class="dropdown-item" routerLink="/perfiladmin">
+                            <i class="fa-solid fa-address-card"></i>&nbsp;&nbsp;Perfil
+                        </a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item btn btn-outline-danger" routerLink="">
+                            <i class="fa-solid fa-right-to-bracket" ></i>&nbsp;&nbsp;Cerrar Sesión
+                        </a></li>
+                </ul>
+            </div>
+        </form>
+    </div>
+</nav>
+
+
+<div class="margenes">
+    <p class="h1 text-center"><strong>¡Bienvenido(a) a Hydrogrow! </strong></p>
+    <br />
+
+    <div class="p-2 row g-6 margenes d-flex justify-content-center">
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="h6 card-title"><strong>Sensor de temperatura</strong></p>
+                    <a class="btn btn-primary" routerLink="/principal">Ir a la Grafica</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="h6 card-title"><strong>Sensor de nivel de agua</strong></p>
+                    <a class="btn btn-primary" routerLink="/principal">Ir a la Grafica</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="h6 card-title"><strong>Sensor de pH</strong></p>
+                    <a href="#" class="btn btn-primary" routerLink="/principal">Ir a la Grafica</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="h6 card-title"><strong>Luminosidad</strong></p>
+                    <a href="#" class="btn btn-primary" routerLink="/principal">Ir a la Grafica</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
