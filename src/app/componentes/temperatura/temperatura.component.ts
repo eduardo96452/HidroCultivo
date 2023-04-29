@@ -17,6 +17,7 @@ import { Observable, map  } from 'rxjs';
 })
 export class TemperaturaComponent{
   items: any[];
+  temperaturas: number[] = [];
 
   constructor(private db:AngularFireDatabase){
     // Obtener referencia a la colección de datos en Firebase
@@ -25,7 +26,15 @@ export class TemperaturaComponent{
     // Obtener los datos como un array y asignarlos a la variable items
     itemsRef.valueChanges().subscribe(items => {
       this.items = items;
-      console.log(this.items);
+      
+      for (const itemKey in this.items) {
+        if (this.items.hasOwnProperty(itemKey)) {
+          const temperatura = this.items[itemKey]["TEMPERATURA"];
+          this.temperaturas.push(temperatura.toFixed(2));
+        }
+      }
+      
+      console.log(this.temperaturas);
     });
   }
 }
