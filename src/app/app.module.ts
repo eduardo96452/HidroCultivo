@@ -8,7 +8,12 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+/*import { provideFirestore,getFirestore } from '@angular/fire/firestore';*/
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+
+
 import { TemperaturaComponent } from './componentes/temperatura/temperatura.component';
 
 @NgModule({
@@ -23,8 +28,10 @@ import { TemperaturaComponent } from './componentes/temperatura/temperatura.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore())
+    /*provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())*/
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
