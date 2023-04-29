@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { NgChartsModule } from 'ng2-charts';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
@@ -31,7 +33,8 @@ import { TemperaturaComponent } from './componentes/temperatura/temperatura.comp
     /*provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())*/
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

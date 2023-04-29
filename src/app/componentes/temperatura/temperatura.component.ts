@@ -37,4 +37,7 @@ export class TemperaturaComponent{
       console.log(this.temperaturas);
     });
   }
+
+  shufedata(){}
+
 }
