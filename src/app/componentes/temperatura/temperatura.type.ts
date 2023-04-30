@@ -1,7 +1,6 @@
 
 
 export interface RealTime {
-    
     'CALIDAD DEL AIRE '?: number;
     'LLENADO DE AGUA '?: boolean;
     'LUMINOSIDAD '?: number;
