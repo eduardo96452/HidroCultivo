@@ -1,21 +1,19 @@
-782 Bytes
 <div class="container mt-5 pt-5">
     <div class="col-12">
         <div class="row">
-            <div class="col-7">
-                <div class="my-4">Temperatura: {{ temperatura }}</div>
-                <div class="chart-wrapper">
+            <div class="col-5">
+                <div class="chart-wrapper text-center">
+                    <div class="my-4 ">Temperatura: {{ temperatura }}</div>
                     <canvas baseChart
                         id="myChart"
                         [data]="barChartData"
                         [options]="barChartOptions"
                         [plugins]="barChartPlugins"
                         [legend]="barChartLegend"
-                        [type]="'bar'"
-                    >
+                        [type]="'bar'">
                     </canvas>
                 </div>
-
+                
             </div>
         </div>
     </div>
