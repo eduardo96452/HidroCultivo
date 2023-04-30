@@ -32,7 +32,7 @@
                         <hr class="dropdown-divider">
                     </li>
                     <li><a class="dropdown-item btn btn-outline-danger" routerLink="">
-                            <i class="fa-solid fa-right-to-bracket" ></i>&nbsp;&nbsp;Cerrar Sesión
+                            <i class="fa-solid fa-right-to-bracket"></i>&nbsp;&nbsp;Cerrar Sesión
                         </a></li>
                 </ul>
             </div>
@@ -40,43 +40,22 @@
     </div>
 </nav>
 
+<div class="container">
+    <div class="row">
+        <div class="col">
 
-<div class="margenes">
-    <p class="h1 text-center"><strong>¡Bienvenido(a) a Hydrogrow! </strong></p>
-    <br />
-
-    <div class="p-2 row g-6 margenes d-flex justify-content-center">
-        <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <p class="h6 card-title"><strong>Sensor de temperatura del agua</strong></p>
-                    <a class="btn btn-primary" routerLink="/temperatura">Ir a la Grafica</a>
-                </div>
+            <div class="my-4 ">Temperatura: {{ temperatura }}</div>
+            <div style="width: 400px">
+                <canvas baseChart id="myChart" [data]="barChartData" [options]="barChartOptions"
+                    [plugins]="barChartPlugins" [legend]="barChartLegend" [type]="'bar'">
+                </canvas>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <p class="h6 card-title"><strong>Calidad del aire</strong></p>
-                    <a class="btn btn-primary" routerLink="/airecalidad">Ir a la Grafica</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <p class="h6 card-title"><strong>Sensor de pH</strong></p>
-                    <a href="#" class="btn btn-primary" routerLink="/principal">Ir a la Grafica</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <p class="h6 card-title"><strong>Luminosidad</strong></p>
-                    <a href="#" class="btn btn-primary" routerLink="/principal">Ir a la Grafica</a>
-                </div>
-            </div>
+        <div class="col my-4">
+            
+                <canvas baseChart id="myChart" [data]="barChartData2" [options]="barChartOptions2"
+                    [plugins]="barChartPlugins2" [legend]="barChartLegend2" [type]="'line'">
+                </canvas>
         </div>
     </div>
 </div>
