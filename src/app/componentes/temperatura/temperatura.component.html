@@ -11,7 +11,26 @@
                         [plugins]="barChartPlugins"
                         [legend]="barChartLegend"
                         [type]="'bar'">
+                        <!--[type]="'line'" con puros puntitos-->
                     </canvas>
+                </div>
+                
+            </div>
+            <div class="col-5">
+                <div class="chart-wrapper text-center">
+                    <!--div class="my-4 ">Temperatura: {{ temperatura }}</div>
+                    <canvas baseChart
+                        id="myChart"
+                        [data]="barChartData"
+                        [options]="barChartOptions"
+                        [plugins]="barChartPlugins"
+                        [legend]="barChartLegend"
+                        [type]="'bar'">
+                    </canvas-->
+                    <h1>Últimos 7 valores de temperatura</h1>
+    <ul>
+      <li *ngFor="let temp of temperaturas$ | async">{{ temp }}</li>
+    </ul>
                 </div>
                 
             </div>
