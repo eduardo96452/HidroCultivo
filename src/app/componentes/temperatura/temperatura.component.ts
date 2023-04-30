@@ -10,13 +10,6 @@ import { Chart } from 'chart.js/dist';
 @Component({
   selector: 'app-temperatura',
   templateUrl: './temperatura.component.html',
-  /*template: `
-    <ul>
-      <li *ngFor="let item of items">
-        {{ item | json }}
-      </li>
-    </ul>
-  `,*/
   styleUrls: ['./temperatura.component.css']
 })
 export class TemperaturaComponent{
