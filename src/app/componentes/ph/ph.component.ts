@@ -3,15 +3,15 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Observable, map } from 'rxjs';
 import { ChartConfiguration, ChartDataset, ChartOptions, ChartType, Colors } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
-import { RealTime } from './temperatura.type';
+
 import { Chart } from 'chart.js/dist';
 
 @Component({
-  selector: 'app-temperatura',
-  templateUrl: './temperatura.component.html',
-  styleUrls: ['./temperatura.component.css']
+  selector: 'app-ph',
+  templateUrl: './ph.component.html',
+  styleUrls: ['./ph.component.css']
 })
-export class TemperaturaComponent {
+export class PhComponent {
   ultimas10Temperaturas: number[] = [];
   temperatura: number;
   ultimo10presentacion: number[] = [];
@@ -49,7 +49,7 @@ export class TemperaturaComponent {
 
   ngOnInit(): void {
     let tiempos: string[] = [];
-    const realtimeRef = this.db.list('/HydroGrow/TEMPERATURA ');
+    const realtimeRef = this.db.list('/HydroGrow/NIVEL DE PH ');
 
     realtimeRef.valueChanges().subscribe((temperaturas: number[]) => {
       this.ultimas10Temperaturas = temperaturas.slice(Math.max(temperaturas.length - 20, 0));
@@ -67,7 +67,7 @@ export class TemperaturaComponent {
         datasets: [
           {
             data: this.ultimo10presentacion, 
-            label: "Temperatura Actual",
+            label: "Nivel de pH Actual",
             backgroundColor: ['rgb(31, 138, 112)'],
             borderColor: ['rgba(0, 255, 0, 0.2)'],
             borderRadius: 10,
@@ -81,7 +81,7 @@ export class TemperaturaComponent {
         datasets: [
           {
             data: this.ultimas10Temperaturas,
-            label: "Temperatura Historica",
+            label: "Datos históricos del pH",
             backgroundColor: ['rgba(0, 255, 0, 0.2)'],
             borderColor: ['rgb(31, 138, 112)'],
             borderWidth: 1

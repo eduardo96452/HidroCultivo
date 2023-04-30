@@ -18,6 +18,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 import { TemperaturaComponent } from './componentes/temperatura/temperatura.component';
 import { AirecalidadComponent } from './componentes/airecalidad/airecalidad.component';
+import { PhComponent } from './componentes/ph/ph.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AirecalidadComponent } from './componentes/airecalidad/airecalidad.comp
     PrincipalComponent,
     TemperaturaComponent,
     AirecalidadComponent,
+    PhComponent,
     
   ],
   imports: [
