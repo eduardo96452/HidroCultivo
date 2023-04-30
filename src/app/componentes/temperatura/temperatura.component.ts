@@ -5,7 +5,6 @@ import { ChartConfiguration, ChartDataset, ChartOptions, ChartType, Colors } fro
 import { BaseChartDirective } from 'ng2-charts';
 import { RealTime } from './temperatura.type';
 import { Chart } from 'chart.js/dist';
-//import { Label } from 'chart.js';
 
 @Component({
   selector: 'app-temperatura',
@@ -32,18 +31,16 @@ export class TemperaturaComponent {
   public barChartLegend2 = true;
   public barChartPlugins2 = [];
   public barChartData2: ChartConfiguration<'bar'>['data'] = {
+
     datasets: [
       { data: [0] }
     ]
   }
-  /*public barChartOptions2: ChartConfiguration<'bar'>['options'] = {
-
-    responsive: false,
-  }*/
 
   public barChartOptions2: ChartOptions = {
     responsive: true,
-    maintainAspectRatio: false
+    maintainAspectRatio: false,
+    
   };
 
 
@@ -69,11 +66,11 @@ export class TemperaturaComponent {
         labels: [new Date().toLocaleTimeString()],
         datasets: [
           {
-
             data: this.ultimo10presentacion, 
             label: "Temperatura Actual",
             backgroundColor: ['rgb(31, 138, 112)'],
             borderColor: ['rgba(0, 255, 0, 0.2)'],
+            borderRadius: 10,
             borderWidth: 1
           },
         ]
@@ -83,33 +80,17 @@ export class TemperaturaComponent {
         labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'],
         datasets: [
           {
-            data: this.ultimas10Temperaturas, label: "Temperatura Historica",
-            backgroundColor: [
-              'rgba(0, 255, 0, 0.2)'
-            ],
-            borderColor: [
-              'rgb(31, 138, 112)'
-            ],
-            borderWidth: 1
+            data: this.ultimas10Temperaturas,
+            label: "Temperatura Historica",
+            backgroundColor: ['rgba(0, 255, 0, 0.2)'],
+            borderColor: ['rgb(31, 138, 112)'],
+            borderWidth: 1,
+            fill: true
           }]
       }
     });
 
 
-    /*const realtimeRef = this.db.object('/RealTime');
-    realtimeRef.valueChanges().subscribe((data: RealTime) => {
-      console.log(data);
-
-      this.datos = data;
-      this.temperatura = data['TEMPERATURA '];
-
-      this.barChartData = {
-        datasets: [
-          { data: [ data['TEMPERATURA ']], label: "Temperatura"}
-        ]
-      }
-
-    });*/
   }
 
 }

@@ -40,22 +40,18 @@
     </div>
 </nav>
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-
-            <div class="my-4 ">Temperatura: {{ temperatura }}</div>
-            <div style="width: 400px">
-                <canvas baseChart id="myChart" [data]="barChartData" [options]="barChartOptions"
-                    [plugins]="barChartPlugins" [legend]="barChartLegend" [type]="'bar'">
-                </canvas>
-            </div>
+<div class="row g-0 text-center espacio">
+    <div class="col-6 col-md-4">
+        <div class="my-4 ">Temperatura: {{ temperatura }}</div>
+        <div style="width: 400px">
+            <canvas baseChart id="myChart" [data]="barChartData" [options]="barChartOptions" [plugins]="barChartPlugins"
+                [legend]="barChartLegend" [type]="'bar'">
+            </canvas>
         </div>
-        <div class="col my-4">
-            
-                <canvas baseChart id="myChart" [data]="barChartData2" [options]="barChartOptions2"
-                    [plugins]="barChartPlugins2" [legend]="barChartLegend2" [type]="'line'">
-                </canvas>
-        </div>
+    </div>
+    <div class="col-sm-6 col-md-8" style="height: 500px">
+        <canvas baseChart id="myChart" [data]="barChartData2" [options]="barChartOptions2" [plugins]="barChartPlugins2"
+            [legend]="barChartLegend2" >
+        </canvas>
     </div>
 </div>
