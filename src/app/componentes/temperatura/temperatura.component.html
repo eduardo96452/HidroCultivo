@@ -42,16 +42,19 @@
 
 <div class="row g-0 text-center espacio">
     <div class="col-6 col-md-4">
-        <div class="my-4 ">Temperatura: {{ temperatura }}</div>
+        <div class="my-4 h4">Temperatura: {{ temperatura }}</div>
         <div style="width: 400px">
             <canvas baseChart id="myChart" [data]="barChartData" [options]="barChartOptions" [plugins]="barChartPlugins"
                 [legend]="barChartLegend" [type]="'bar'">
             </canvas>
         </div>
+        <div class="h1" [ngStyle]="{color: temperatura >= 22 ? 'red' : 'green'}">
+            {{ temperatura >= 22 ? 'Estado en alerta' : 'Estado normal' }}
+        </div>
     </div>
     <div class="col-sm-6 col-md-8" style="height: 500px">
         <canvas baseChart id="myChart" [data]="barChartData2" [options]="barChartOptions2" [plugins]="barChartPlugins2"
-            [legend]="barChartLegend2" >
+            [legend]="barChartLegend2" [type]="'line'">
         </canvas>
     </div>
 </div>

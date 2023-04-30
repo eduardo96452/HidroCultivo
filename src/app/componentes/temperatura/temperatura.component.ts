@@ -84,8 +84,7 @@ export class TemperaturaComponent {
             label: "Temperatura Historica",
             backgroundColor: ['rgba(0, 255, 0, 0.2)'],
             borderColor: ['rgb(31, 138, 112)'],
-            borderWidth: 1,
-            fill: true
+            borderWidth: 1
           }]
       }
     });
