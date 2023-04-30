@@ -1,3 +1,4 @@
+782 Bytes
 <div class="container mt-5 pt-5">
     <div class="col-12">
         <div class="row">
@@ -6,15 +7,19 @@
                 <br>
                 <h3>Shufle Data</h3>
                 <br>
-                <button class="btn btn-outline-primary" (click)="shufedata()">Shuffle</button>
+                <button class="btn btn-outline-primary" >Shuffle</button>
             </div>
             <div class="col-7">
+                <div class="my-4">Temperatura: {{ temperatura }}</div>
                 <div class="chart-wrapper">
                     <canvas baseChart
-                        [datasets]="lineChartData"
-                        [labels]="lineChartLabels"
-                        [options]="lineChartOptions"
-                        [legend]="lineChartLegend">
+                        id="myChart"
+                        [data]="barChartData"
+                        [options]="barChartOptions"
+                        [plugins]="barChartPlugins"
+                        [legend]="barChartLegend"
+                        [type]="'bar'"
+                    >
                     </canvas>
                 </div>
 
