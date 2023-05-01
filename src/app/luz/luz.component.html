@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<p class="h1 text-center"><strong>Niveles de intensidad de luz</strong></p>
+<div class="row g-0 text-center espacio">
+    <div class="col-6 col-md-4">
+        <div class="my-4 h4">Nivel de intensidad de luz: {{ temperatura }}</div>
+        <div style="width: 350px">
+            <canvas baseChart id="myChart" [data]="barChartData" [options]="barChartOptions" [plugins]="barChartPlugins"
+                [legend]="barChartLegend" [type]="'bar'">
+            </canvas>
+        </div>
+        <div class="h3 text-center " [ngStyle]="{color: temperatura <= 500 ? 'red' : 'green'}">
+            {{ temperatura <= 500 ? 'Estado en alerta' : 'Estado normal' }}
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-8" style="height: 400px">
+        <canvas baseChart id="myChart" [data]="barChartData2" [options]="barChartOptions2" [plugins]="barChartPlugins2"
+            [legend]="barChartLegend2" [type]="'line'">
+        </canvas>
+    </div>
+</div>

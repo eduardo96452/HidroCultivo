@@ -15,6 +15,7 @@ import { AirecalidadComponent } from './componentes/airecalidad/airecalidad.comp
 import { PhComponent } from './componentes/ph/ph.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
+import { LuzComponent } from './luz/luz.component';
 
 const appRoutes: Routes = [
   {path:'', component:LoginComponent},
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
     AirecalidadComponent,
     PhComponent,
     NavbarComponent,
+    LuzComponent,
     
   ],
   imports: [

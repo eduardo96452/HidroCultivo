@@ -6,6 +6,7 @@ import { PrincipalComponent } from './componentes/principal/principal.component'
 import { TemperaturaComponent } from './componentes/temperatura/temperatura.component';
 import { AirecalidadComponent } from './componentes/airecalidad/airecalidad.component';
 import { PhComponent } from './componentes/ph/ph.component';
+import { LuzComponent } from './luz/luz.component';
 
 const routes: Routes = [
   {path: '', component:LoginComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'principale', component:PrincipalComponent},
   {path: 'temperatura', component:TemperaturaComponent},
   {path: 'airecalidad', component:AirecalidadComponent},
-  {path: 'ph', component:PhComponent}
+  {path: 'ph', component:PhComponent},
+  {path: 'luz', component:LuzComponent}
 ];
 
 @NgModule({
