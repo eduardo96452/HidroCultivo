@@ -1,48 +1,8 @@
-<nav class="navbar navbar-expand-lg" style="background-color: #D9f1db;">
-    <div class="container-fluid">
-        <a class="navbar-brand"><strong>HydroGrow</strong></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <b><a class="nav-link" style="color:#131213;" routerLink="principal"><i
-                                class="fa-solid fa-house"></i>&nbsp;&nbsp;Home </a> </b>
-                </li>
-                <li class="nav-item">
-                    <b><a class="nav-link" style="color:#232324;" routerLink="principal" enable="false"><i
-                                class="fa-solid fa-tooth"></i>&nbsp;&nbsp;Configuraciones</a></b>
-                </li>
-            </ul>
-        </div>
-        <form class="nav-item">
-            <div class="flex-shrink-0 dropdown dropstart">
-                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    <strong>Usuario&nbsp;</strong>
-                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-                </a>
-                <ul class="dropdown-menu text-small shadow">
-                    <li><a class="dropdown-item" routerLink="/perfiladmin">
-                            <i class="fa-solid fa-address-card"></i>&nbsp;&nbsp;Perfil
-                        </a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item btn btn-outline-danger" routerLink="">
-                            <i class="fa-solid fa-right-to-bracket"></i>&nbsp;&nbsp;Cerrar Sesión
-                        </a></li>
-                </ul>
-            </div>
-        </form>
-    </div>
-</nav>
-
+<app-navbar></app-navbar>
+<p class="display-1 text-center"><strong>Niveles de temperatura del agua</strong></p>
 <div class="row g-0 text-center espacio">
     <div class="col-6 col-md-4">
-        <div class="my-4 h4">Temperatura: {{ temperatura }}</div>
+        <div class="my-4 h4">Temperatura del agua: {{ temperatura }}</div>
         <div style="width: 400px">
             <canvas baseChart id="myChart" [data]="barChartData" [options]="barChartOptions" [plugins]="barChartPlugins"
                 [legend]="barChartLegend" [type]="'bar'">
@@ -52,7 +12,7 @@
             {{ temperatura >= 22 ? 'Estado en alerta' : 'Estado normal' }}
         </div>
     </div>
-    <div class="col-sm-6 col-md-8" style="height: 500px">
+    <div class="col-sm-6 col-md-8" style="height: 400px">
         <canvas baseChart id="myChart" [data]="barChartData2" [options]="barChartOptions2" [plugins]="barChartPlugins2"
             [legend]="barChartLegend2" [type]="'line'">
         </canvas>

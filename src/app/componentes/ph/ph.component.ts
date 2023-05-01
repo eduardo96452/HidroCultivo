@@ -68,7 +68,7 @@ export class PhComponent {
           {
             data: this.ultimo10presentacion, 
             label: "Nivel de pH Actual",
-            backgroundColor: ['rgb(31, 138, 112)'],
+            backgroundColor: ['rgb(124,252,0)'],
             borderColor: ['rgba(0, 255, 0, 0.2)'],
             borderRadius: 10,
             borderWidth: 1
@@ -83,7 +83,7 @@ export class PhComponent {
             data: this.ultimas10Temperaturas,
             label: "Datos históricos del pH",
             backgroundColor: ['rgba(0, 255, 0, 0.2)'],
-            borderColor: ['rgb(31, 138, 112)'],
+            borderColor: ['rgb(50,205,50)'],
             borderWidth: 1
           }]
       }

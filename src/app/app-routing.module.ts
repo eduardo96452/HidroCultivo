@@ -10,7 +10,7 @@ import { PhComponent } from './componentes/ph/ph.component';
 const routes: Routes = [
   {path: '', component:LoginComponent},
   {path: 'registro', component:RegistroComponent},
-  {path: 'principal', component:PrincipalComponent},
+  {path: 'principale', component:PrincipalComponent},
   {path: 'temperatura', component:TemperaturaComponent},
   {path: 'airecalidad', component:AirecalidadComponent},
   {path: 'ph', component:PhComponent}
