@@ -62,7 +62,7 @@ export class AirecalidadComponent {
 
             data: this.ultimo10presentacion, 
             label: "Calidad del aire en tiempo real",
-            backgroundColor: ['rgb(31, 138, 112)'],
+            backgroundColor: ['rgb(43, 497, 161)'],
             borderColor: ['rgba(0, 255, 0, 0.2)'],
             borderWidth: 1
           },

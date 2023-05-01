@@ -1,14 +1,14 @@
 <app-navbar></app-navbar>
-<p class="display-1 text-center"><strong>Niveles de pH</strong></p>
+<p class="h1 text-center"><strong>Niveles de pH</strong></p>
 <div class="row g-0 text-center espacio">
     <div class="col-6 col-md-4">
         <div class="my-4 ">pH actaul: {{ temperatura }}</div>
-        <div style="width: 400px">
+        <div style="width: 350px" class="text-center">
             <canvas baseChart id="myChart" [data]="barChartData" [options]="barChartOptions" [plugins]="barChartPlugins"
                 [legend]="barChartLegend" [type]="'bar'">
             </canvas>
         </div>
-        <div class="h1" [ngStyle]="{color: temperatura <= 5.5 ? 'red' : 'green'}">
+        <div class="h3 text-center" [ngStyle]="{color: temperatura <= 5.5 ? 'red' : 'green'}">
             {{ temperatura <= 5.5 ? 'Estado en alerta' : 'Estado normal' }}
         </div>
     </div>

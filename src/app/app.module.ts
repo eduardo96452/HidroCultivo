@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { NgChartsModule } from 'ng2-charts';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
@@ -10,17 +8,22 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-/*import { provideFirestore,getFirestore } from '@angular/fire/firestore';*/
-
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-
-
 import { TemperaturaComponent } from './componentes/temperatura/temperatura.component';
 import { AirecalidadComponent } from './componentes/airecalidad/airecalidad.component';
 import { PhComponent } from './componentes/ph/ph.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
+import { RouterModule, Routes } from '@angular/router';
 
+const appRoutes: Routes = [
+  {path:'', component:LoginComponent},
+  {path:'registro', component:RegistroComponent},
+  {path:'principale', component:PrincipalComponent},
+  {path:'temperatura', component:TemperaturaComponent},
+  {path:'airecalidad', component:AirecalidadComponent},
+  {path:'ph', component:PhComponent}
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,11 +39,10 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    /*provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore())*/
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     NgChartsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

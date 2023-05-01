@@ -1,14 +1,14 @@
 <app-navbar></app-navbar>
-<p class="display-1 text-center"><strong>Niveles de temperatura del agua</strong></p>
+<p class="h1 text-center"><strong>Niveles de temperatura del agua</strong></p>
 <div class="row g-0 text-center espacio">
     <div class="col-6 col-md-4">
         <div class="my-4 h4">Temperatura del agua: {{ temperatura }}</div>
-        <div style="width: 400px">
+        <div style="width: 350px">
             <canvas baseChart id="myChart" [data]="barChartData" [options]="barChartOptions" [plugins]="barChartPlugins"
                 [legend]="barChartLegend" [type]="'bar'">
             </canvas>
         </div>
-        <div class="h1" [ngStyle]="{color: temperatura >= 22 ? 'red' : 'green'}">
+        <div class="h3 text-center " [ngStyle]="{color: temperatura >= 22 ? 'red' : 'green'}">
             {{ temperatura >= 22 ? 'Estado en alerta' : 'Estado normal' }}
         </div>
     </div>

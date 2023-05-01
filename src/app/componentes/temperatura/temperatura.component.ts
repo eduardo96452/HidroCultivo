@@ -68,7 +68,7 @@ export class TemperaturaComponent {
           {
             data: this.ultimo10presentacion, 
             label: "Temperatura Actual",
-            backgroundColor: ['rgb(240,230,140)'],
+            backgroundColor: ['rgb(1,140,47)'],
             borderColor: ['rgba(0, 255, 0, 0.2)'],
             borderRadius: 10,
             borderWidth: 1
