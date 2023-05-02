@@ -16,6 +16,7 @@ import { PhComponent } from './componentes/ph/ph.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { LuzComponent } from './luz/luz.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {path:'', component:LoginComponent},
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     NgChartsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
