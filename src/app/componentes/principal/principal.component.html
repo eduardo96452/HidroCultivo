@@ -1,42 +1,79 @@
 <app-navbar></app-navbar>
 
 
-<div class="margenes">
+<div class="container">
     <p class="h1 text-center"><strong>¡Bienvenido(a) a Hydrogrow! </strong></p>
-    <br />
-
-    <div class="p-2 row g-6 margenes d-flex justify-content-center">
-        <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <p class="h6 card-title"><strong>Sensor de temperatura del agua</strong></p>
-                    <a class="btn btn-primary" routerLink="/temperatura">Ir a la Grafica</a>
+    <br>
+    <input type="radio" name="dot" id="one">
+    <input type="radio" name="dot" id="two">
+    <div class="main-card">
+        <div class="cards">
+            <div class="card" routerLink="/temperatura">
+                <div class="content">
+                    <div class="img">
+                        <img src="../../../assets/img/Temperatura.png" alt="">
+                    </div>
+                    <div class="details">
+                        <div class="name">Sensor de temperatura del agua</div>
+                    </div>
+                    <div class="media-icons">
+                        <a routerLink="/temperatura"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-amd" viewBox="0 0 16 16">
+                            <path d="m.334 0 4.358 4.359h7.15v7.15l4.358 4.358V0H.334ZM.2 9.72l4.487-4.488v6.281h6.28L6.48 16H.2V9.72Z"/>
+                          </svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card" routerLink="/airecalidad">
+                <div class="content">
+                    <div class="img">
+                        <img src="../../../assets/img/calidad-del-aire.png" alt="">
+                    </div>
+                    <div class="details">
+                        <div class="name">Calidad del aire</div>
+                    </div>
+                    <div class="media-icons">
+                        <a routerLink="/airecalidad"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-amd" viewBox="0 0 16 16">
+                            <path d="m.334 0 4.358 4.359h7.15v7.15l4.358 4.358V0H.334ZM.2 9.72l4.487-4.488v6.281h6.28L6.48 16H.2V9.72Z"/>
+                          </svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card" routerLink="/ph">
+                <div class="content">
+                    <div class="img">
+                        <img src="../../../assets/img/Niveles de pH.png" alt="">
+                    </div>
+                    <div class="details">
+                        <div class="name">Niveles de pH</div>
+                    </div>
+                    <div class="media-icons">
+                        <a routerLink="/ph"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-amd" viewBox="0 0 16 16">
+                            <path d="m.334 0 4.358 4.359h7.15v7.15l4.358 4.358V0H.334ZM.2 9.72l4.487-4.488v6.281h6.28L6.48 16H.2V9.72Z"/>
+                          </svg></a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <p class="h6 card-title"><strong>Calidad del aire</strong></p>
-                    <a class="btn btn-primary" routerLink="/airecalidad">Ir a la Grafica</a>
+        <div class="cards">
+            <div class="card" routerLink="/luz">
+                <div class="content">
+                    <div class="img">
+                        <img src="../../../assets/img/luminosidad.png" alt="">
+                    </div>
+                    <div class="details">
+                        <div class="name">Luminosidad</div>
+                    </div>
+                    <div class="media-icons">
+                        <a routerLink="/luz"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-amd" viewBox="0 0 16 16">
+                            <path d="m.334 0 4.358 4.359h7.15v7.15l4.358 4.358V0H.334ZM.2 9.72l4.487-4.488v6.281h6.28L6.48 16H.2V9.72Z"/>
+                          </svg></a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <p class="h6 card-title"><strong>Niveles de pH</strong></p>
-                    <a href="#" class="btn btn-primary" routerLink="/ph">Ir a la Grafica</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <p class="h6 card-title"><strong>Luminosidad</strong></p>
-                    <a href="#" class="btn btn-primary" routerLink="/luz">Ir a la Grafica</a>
-                </div>
-            </div>
-        </div>
+    </div>
+    <div class="button">
+        <label for="one" class="active one blanco text-center"><strong>1</strong></label>
+        <label for="two" class="two text-center"><strong>2</strong></label>
     </div>
 </div>
