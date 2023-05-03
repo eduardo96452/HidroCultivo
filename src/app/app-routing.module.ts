@@ -7,6 +7,7 @@ import { TemperaturaComponent } from './componentes/temperatura/temperatura.comp
 import { AirecalidadComponent } from './componentes/airecalidad/airecalidad.component';
 import { PhComponent } from './componentes/ph/ph.component';
 import { LuzComponent } from './luz/luz.component';
+import { NutrientesComponent } from './componentes/nutrientes/nutrientes.component';
 
 const routes: Routes = [
   {path: '', component:LoginComponent},
@@ -15,7 +16,9 @@ const routes: Routes = [
   {path: 'temperatura', component:TemperaturaComponent},
   {path: 'airecalidad', component:AirecalidadComponent},
   {path: 'ph', component:PhComponent},
-  {path: 'luz', component:LuzComponent}
+  {path: 'luz', component:LuzComponent},
+  {path: 'nutrientes', component:NutrientesComponent}
+
 ];
 
 @NgModule({

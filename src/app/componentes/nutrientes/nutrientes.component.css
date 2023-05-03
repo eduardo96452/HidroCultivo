@@ -1,0 +1,9 @@
+.espacio{
+    padding: 2em;
+}
+
+.separator {
+    width: 1px;
+    height: 61vh;
+    border-left: 5px solid #da1616; /* Color de la barra vertical */
+  }

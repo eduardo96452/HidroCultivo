@@ -64,6 +64,7 @@ export class AirecalidadComponent {
             label: "Calidad del aire en tiempo real",
             backgroundColor: ['rgb(43, 497, 161)'],
             borderColor: ['rgba(0, 255, 0, 0.2)'],
+            borderRadius: 10,
             borderWidth: 1
           },
         ]
@@ -73,13 +74,11 @@ export class AirecalidadComponent {
         labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'],
         datasets: [
           {
-            data: this.ultimas10Temperaturas, label: "Datos históricos de Calidad del aire",
-            backgroundColor: [
-              'rgba(0, 255, 0, 0.2)'
-            ],
-            borderColor: [
-              'rgb(31, 138, 112)'
-            ],
+            data: this.ultimas10Temperaturas,
+            label: "Datos históricos de Calidad del aire",
+            backgroundColor: ['rgba(0, 255, 0, 0.2)'],
+            borderColor: ['rgb(31, 138, 112)'],
+            borderRadius: 10,
             borderWidth: 1
           }]
       }

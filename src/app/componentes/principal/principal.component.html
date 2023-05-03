@@ -1,9 +1,56 @@
 <app-navbar></app-navbar>
 
 
+<div class="icon-container">
+    <label class="ml-2">Estado de las luces: {{ luces != true ? 'Apagado' : 'Encendido' }}</label>&nbsp;&nbsp;
+    <svg *ngIf="luces != true; else encendido" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px"
+        fill="currentColor" class="bi bi-octagon-fill text-danger" viewBox="0 0 16 16">
+        <path
+            d="M11.107 0a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146A.5.5 0 0 1 4.893 0h6.214z" />
+    </svg>
+    <ng-template #encendido>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" fill="currentColor"
+            class="bi bi-octagon-fill text-success" viewBox="0 0 16 16">
+            <path
+                d="M11.107 0a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146A.5.5 0 0 1 4.893 0h6.214z" />
+        </svg>
+    </ng-template>
+</div>
+<div class="icon-container">
+    <label class="ml-2">Estado de las Flujo del Agua: {{ flujoagua != true ? 'Apagado' : 'Encendido' }}</label>&nbsp;&nbsp;
+    <svg *ngIf="flujoagua != true; else encendido" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px"
+        fill="currentColor" class="bi bi-octagon-fill text-danger" viewBox="0 0 16 16">
+        <path
+            d="M11.107 0a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146A.5.5 0 0 1 4.893 0h6.214z" />
+    </svg>
+    <ng-template #encendido>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" fill="currentColor"
+            class="bi bi-octagon-fill text-success" viewBox="0 0 16 16">
+            <path
+                d="M11.107 0a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146A.5.5 0 0 1 4.893 0h6.214z" />
+        </svg>
+    </ng-template>
+</div>
+<div class="icon-container">
+    <label class="ml-2">Estado de las llenado del Agua: {{ llenadoagua != true ? 'Apagado' : 'Encendido' }}</label>&nbsp;&nbsp;
+    <svg *ngIf="llenadoagua != true; else encendido" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px"
+        fill="currentColor" class="bi bi-octagon-fill text-danger" viewBox="0 0 16 16">
+        <path
+            d="M11.107 0a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146A.5.5 0 0 1 4.893 0h6.214z" />
+    </svg>
+    <ng-template #encendido>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" fill="currentColor"
+            class="bi bi-octagon-fill text-success" viewBox="0 0 16 16">
+            <path
+                d="M11.107 0a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146A.5.5 0 0 1 4.893 0h6.214z" />
+        </svg>
+    </ng-template>
+</div>
+
 <div class="container">
     <p class="h1 text-center"><strong>¡Bienvenido(a) a Hydrogrow! </strong></p>
     <br>
+
     <input type="radio" name="dot" id="one">
     <input type="radio" name="dot" id="two">
     <div class="main-card">
@@ -17,9 +64,11 @@
                         <div class="name">Sensor de temperatura del agua</div>
                     </div>
                     <div class="media-icons">
-                        <a routerLink="/temperatura"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-amd" viewBox="0 0 16 16">
-                            <path d="m.334 0 4.358 4.359h7.15v7.15l4.358 4.358V0H.334ZM.2 9.72l4.487-4.488v6.281h6.28L6.48 16H.2V9.72Z"/>
-                          </svg></a>
+                        <a routerLink="/temperatura"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-amd" viewBox="0 0 16 16">
+                                <path
+                                    d="m.334 0 4.358 4.359h7.15v7.15l4.358 4.358V0H.334ZM.2 9.72l4.487-4.488v6.281h6.28L6.48 16H.2V9.72Z" />
+                            </svg></a>
                     </div>
                 </div>
             </div>
@@ -32,9 +81,11 @@
                         <div class="name">Calidad del aire</div>
                     </div>
                     <div class="media-icons">
-                        <a routerLink="/airecalidad"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-amd" viewBox="0 0 16 16">
-                            <path d="m.334 0 4.358 4.359h7.15v7.15l4.358 4.358V0H.334ZM.2 9.72l4.487-4.488v6.281h6.28L6.48 16H.2V9.72Z"/>
-                          </svg></a>
+                        <a routerLink="/airecalidad"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-amd" viewBox="0 0 16 16">
+                                <path
+                                    d="m.334 0 4.358 4.359h7.15v7.15l4.358 4.358V0H.334ZM.2 9.72l4.487-4.488v6.281h6.28L6.48 16H.2V9.72Z" />
+                            </svg></a>
                     </div>
                 </div>
             </div>
@@ -47,9 +98,11 @@
                         <div class="name">Niveles de pH</div>
                     </div>
                     <div class="media-icons">
-                        <a routerLink="/ph"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-amd" viewBox="0 0 16 16">
-                            <path d="m.334 0 4.358 4.359h7.15v7.15l4.358 4.358V0H.334ZM.2 9.72l4.487-4.488v6.281h6.28L6.48 16H.2V9.72Z"/>
-                          </svg></a>
+                        <a routerLink="/ph"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-amd" viewBox="0 0 16 16">
+                                <path
+                                    d="m.334 0 4.358 4.359h7.15v7.15l4.358 4.358V0H.334ZM.2 9.72l4.487-4.488v6.281h6.28L6.48 16H.2V9.72Z" />
+                            </svg></a>
                     </div>
                 </div>
             </div>
@@ -64,13 +117,15 @@
                         <div class="name">Luminosidad</div>
                     </div>
                     <div class="media-icons">
-                        <a routerLink="/luz"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-amd" viewBox="0 0 16 16">
-                            <path d="m.334 0 4.358 4.359h7.15v7.15l4.358 4.358V0H.334ZM.2 9.72l4.487-4.488v6.281h6.28L6.48 16H.2V9.72Z"/>
-                          </svg></a>
+                        <a routerLink="/luz"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-amd" viewBox="0 0 16 16">
+                                <path
+                                    d="m.334 0 4.358 4.359h7.15v7.15l4.358 4.358V0H.334ZM.2 9.72l4.487-4.488v6.281h6.28L6.48 16H.2V9.72Z" />
+                            </svg></a>
                     </div>
                 </div>
             </div>
-            <div class="card" routerLink="#nuevolink">
+            <div class="card" routerLink="/nutrientes">
                 <div class="content">
                     <div class="img">
                         <img src="../../../assets/img/nutritivo.png" alt="">
@@ -79,9 +134,11 @@
                         <div class="name">Nutrientes</div>
                     </div>
                     <div class="media-icons">
-                        <a routerLink="#nuevolink"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-amd" viewBox="0 0 16 16">
-                            <path d="m.334 0 4.358 4.359h7.15v7.15l4.358 4.358V0H.334ZM.2 9.72l4.487-4.488v6.281h6.28L6.48 16H.2V9.72Z"/>
-                          </svg></a>
+                        <a routerLink="/nutrientes"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-amd" viewBox="0 0 16 16">
+                                <path
+                                    d="m.334 0 4.358 4.359h7.15v7.15l4.358 4.358V0H.334ZM.2 9.72l4.487-4.488v6.281h6.28L6.48 16H.2V9.72Z" />
+                            </svg></a>
                     </div>
                 </div>
             </div>

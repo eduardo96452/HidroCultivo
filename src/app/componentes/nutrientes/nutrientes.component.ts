@@ -6,11 +6,11 @@ import { BaseChartDirective } from 'ng2-charts';
 import { Chart } from 'chart.js/dist';
 
 @Component({
-  selector: 'app-ph',
-  templateUrl: './ph.component.html',
-  styleUrls: ['./ph.component.css']
+  selector: 'app-nutrientes',
+  templateUrl: './nutrientes.component.html',
+  styleUrls: ['./nutrientes.component.css']
 })
-export class PhComponent {
+export class NutrientesComponent {
   ultimas10Temperaturas: number[] = [];
   temperatura: number;
   ultimo10presentacion: number[] = [];
@@ -30,7 +30,6 @@ export class PhComponent {
   public barChartLegend2 = true;
   public barChartPlugins2 = [];
   public barChartData2: ChartConfiguration<'bar'>['data'] = {
-
     datasets: [
       { data: [0] }
     ]
@@ -39,10 +38,7 @@ export class PhComponent {
   public barChartOptions2: ChartOptions = {
     responsive: true,
     maintainAspectRatio: false,
-    
   };
-
-
 
   constructor(private db: AngularFireDatabase) { }
 
@@ -62,17 +58,15 @@ export class PhComponent {
       this.ultimo10presentacion[0] = this.temperatura;
 
       this.barChartData = {
-        labels: [new Date().toLocaleTimeString()],
+        labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'],
         datasets: [
           {
-            data: this.ultimo10presentacion, 
-            label: "Nivel de pH Actual",
-            backgroundColor: ['rgb(124,252,0)'],
-            borderColor: ['rgba(0, 255, 0, 0.2)'],
-            borderRadius: 10,
+            data: this.ultimas10Temperaturas,
+            label: "Datos históricos de los nutrientes (Nitrogeno y Forforo)",
+            backgroundColor: ['rgba(0, 255, 0, 0.2)'],
+            borderColor: ['rgb(50,205,50)'],
             borderWidth: 1
-          },
-        ]
+          }]
       }
 
       this.barChartData2 = {
@@ -80,7 +74,7 @@ export class PhComponent {
         datasets: [
           {
             data: this.ultimas10Temperaturas,
-            label: "Datos históricos del pH",
+            label: "Datos históricos de los nutrientes potasio  /HydroGrow/NUTRIENTE POTASIO ",
             backgroundColor: ['rgba(0, 255, 0, 0.2)'],
             borderColor: ['rgb(50,205,50)'],
             borderWidth: 1
