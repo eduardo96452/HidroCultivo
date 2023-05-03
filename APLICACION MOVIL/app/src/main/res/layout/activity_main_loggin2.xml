@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EFF0FC"
+    tools:context=".MainActivity_Loggin">
+
+    <ImageView
+        android:id="@+id/Loggin_imageView_Logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/top_background1" />
+
+    <TextView
+        android:id="@+id/Loggin_TextView_Logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenido"
+        android:layout_marginStart="32dp"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="#6672FF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/Loggin_imageView_Logo"
+        />
+
+    <EditText
+        android:id="@+id/Loggin_EditText_inputuser"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/email"
+        android:drawablePadding="16dp"
+        android:hint="Email"
+        android:textColorHint="#3B608C"
+        android:textSize="18sp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:background="@drawable/edittext_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Loggin_TextView_Logo"
+        />
+
+    <EditText
+        android:id="@+id/Loggin_EditText_inputpassword"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:drawableStart="@drawable/password"
+        android:drawablePadding="16dp"
+        android:hint="Password"
+        android:textColorHint="#3B608C"
+        android:textSize="18sp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:background="@drawable/edittext_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:flow_horizontalBias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Loggin_EditText_inputuser"
+        />
+
+    <ImageView
+        android:id="@+id/Loggin_imageView_IniciarSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Loggin_EditText_inputpassword"
+        app:srcCompat="@drawable/btn_arraw1" />
+
+
+    <TextView
+        android:id="@+id/textView_registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="72dp"
+        android:text="Are you new user? Register"
+        android:textColor="#3b608c"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/Loggin_imageView_IniciarSesion"
+        app:layout_constraintTop_toBottomOf="@id/Loggin_imageView_IniciarSesion" />
+</androidx.constraintlayout.widget.ConstraintLayout>
