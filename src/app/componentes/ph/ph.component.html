@@ -8,8 +8,8 @@
                 [legend]="barChartLegend" [type]="'bar'">
             </canvas>
         </div>
-        <div class="h3 text-center" [ngStyle]="{color: temperatura <= 5.5 ? 'red' : 'green'}">
-            {{ temperatura <= 5.5 ? 'Estado en alerta' : 'Estado normal' }}
+        <div class="h3 text-center" [ngStyle]="{color: temperatura <= 5.5 || temperatura >= 5.8 ? 'red' : 'green'}">
+            {{ temperatura <= 5.5 || temperatura >= 5.8 ? 'Estado en alerta por favor verifique el pH' : 'Estado normal' }}
         </div>
     </div>
     <div class="col-sm-6 col-md-8" style="height: 400px">
