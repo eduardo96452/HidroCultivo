@@ -1,4 +1,6 @@
 <app-navbar></app-navbar>
+<br>
+<br>
 <p class="h1 text-center"><strong>Verter los nutrientes</strong></p>
 <div class="row g-0 text-center espacio">
     <div class="col-sm-6 col-md-6" style="height: 400px; margin-right: 30px; flex: 1;">
@@ -6,7 +8,7 @@
             [legend]="barChartLegend" [type]="'line'">
         </canvas>
     </div>
-    <div class="separator"></div>
+    
     <div class="col-sm-6 col-md-6" style="height: 400px; margin-left: 30px; flex: 1;">
         <canvas baseChart id="myChart" [data]="barChartData2" [options]="barChartOptions2" [plugins]="barChartPlugins2"
             [legend]="barChartLegend2" [type]="'line'">

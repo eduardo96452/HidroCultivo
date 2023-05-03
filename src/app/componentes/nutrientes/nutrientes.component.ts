@@ -11,10 +11,13 @@ import { Chart } from 'chart.js/dist';
   styleUrls: ['./nutrientes.component.css']
 })
 export class NutrientesComponent {
-  ultimas10Temperaturas: number[] = [];
-  temperatura: number;
-  ultimo10presentacion: number[] = [];
+  ultimas10Temperaturas: boolean[] = [];
+  temperatura: boolean;
+  ultimo10presentacion: boolean[] = [];
 
+  ultimas10Potasionutri: boolean[] = [];
+  Potasionutri: boolean;
+  ultimo10presentacion2: boolean[] = [];
 
   public barChartLegend = true;
   public barChartPlugins = [];
@@ -37,20 +40,19 @@ export class NutrientesComponent {
 
   public barChartOptions2: ChartOptions = {
     responsive: true,
-    maintainAspectRatio: false,
   };
 
   constructor(private db: AngularFireDatabase) { }
 
   ngOnInit(): void {
     let tiempos: string[] = [];
-    const realtimeRef = this.db.list('/HydroGrow/NIVEL DE PH ');
+    const realtimeRef = this.db.list('/HydroGrow/NUTRIENTE NITROGENO FOSFORO ');
 
-    realtimeRef.valueChanges().subscribe((temperaturas: number[]) => {
+    realtimeRef.valueChanges().subscribe((temperaturas: boolean[]) => {
       this.ultimas10Temperaturas = temperaturas.slice(Math.max(temperaturas.length - 20, 0));
-      this.temperatura = Number(this.ultimas10Temperaturas[this.ultimas10Temperaturas.length - 1].toFixed(2));
+      this.temperatura = this.ultimas10Temperaturas[this.ultimas10Temperaturas.length - 1];
       for (let index = 0; index < this.ultimas10Temperaturas.length; index++) {
-        this.ultimas10Temperaturas[index] = Number(this.ultimas10Temperaturas[index].toFixed(2));
+        this.ultimas10Temperaturas[index] = this.ultimas10Temperaturas[index];
         tiempos[index] = new Date().toLocaleTimeString();
       }
       console.log(this.temperatura);
@@ -61,28 +63,40 @@ export class NutrientesComponent {
         labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'],
         datasets: [
           {
-            data: this.ultimas10Temperaturas,
-            label: "Datos históricos de los nutrientes (Nitrogeno y Forforo)",
+            data: this.ultimas10Temperaturas.map((value) => value ? 1 : 0),
+            label: "Datos históricos de los nutrientes Nitrogeno y Fosforo",
             backgroundColor: ['rgba(0, 255, 0, 0.2)'],
             borderColor: ['rgb(50,205,50)'],
             borderWidth: 1
           }]
       }
 
-      this.barChartData2 = {
-        labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'],
-        datasets: [
-          {
-            data: this.ultimas10Temperaturas,
-            label: "Datos históricos de los nutrientes potasio  /HydroGrow/NUTRIENTE POTASIO ",
-            backgroundColor: ['rgba(0, 255, 0, 0.2)'],
-            borderColor: ['rgb(50,205,50)'],
-            borderWidth: 1
-          }]
-      }
-    });
+      /*---------------------------------------------------*/
 
+      const realtimeRef2 = this.db.list('/HydroGrow/NUTRIENTE POTASIO ');
+      realtimeRef2.valueChanges().subscribe((potasio: boolean[]) => {
+        this.ultimas10Potasionutri = potasio.slice(Math.max(potasio.length - 20, 0));
+        this.Potasionutri = this.ultimas10Potasionutri[this.ultimas10Potasionutri.length - 1];
+        for (let index = 0; index < this.ultimas10Potasionutri.length; index++) {
+          this.ultimas10Potasionutri[index] = this.ultimas10Potasionutri[index];
+          tiempos[index] = new Date().toLocaleTimeString();
+        }
+        console.log(this.Potasionutri);
+        console.log(this.ultimas10Potasionutri);
+        this.ultimo10presentacion2[0] = this.Potasionutri;
 
+        this.barChartData2 = {
+          labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'],
+          datasets: [
+            {
+              data: this.ultimas10Potasionutri.map((value) => value ? 1 : 0),
+              label: "Datos históricos de los nutrientes Potasio",
+              backgroundColor: ['rgba(0, 255, 0, 0.2)'],
+              borderColor: ['rgb(50,205,50)'],
+              borderWidth: 1
+            }]
+        }
+      });
+    })
   }
-
 }
